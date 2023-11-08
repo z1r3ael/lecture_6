@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:lecture_6/features/navigator_named/arguments/second_screen_arguments.dart';
 
 class SecondScreen extends StatelessWidget {
   const SecondScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    final args = ModalRoute.of(context)!.settings.arguments as SecondScreenArguments;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Second Screen'),
@@ -14,6 +18,8 @@ class SecondScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(args.data),
+            const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/third');

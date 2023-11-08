@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lecture_6/features/navigator_named/arguments/second_screen_arguments.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
@@ -12,7 +13,11 @@ class FirstScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/second');
+            Navigator.pushNamed(
+              context,
+              '/second',
+              arguments: SecondScreenArguments(data: 'Some data'),
+            );
           },
           child: const Text('Go to second'),
         ),
