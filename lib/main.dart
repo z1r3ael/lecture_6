@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lecture_6/features/navigator/first_screen.dart';
+import 'package:lecture_6/features/hero_animation/first_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const FirstRoute(),
+      home: const MainScreen(),
     );
   }
 }
