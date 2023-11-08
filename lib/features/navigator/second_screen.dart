@@ -18,11 +18,12 @@ class SecondRoute extends StatelessWidget {
             ElevatedButton(
               child: const Text('Open route3'),
               onPressed: () {
-                Navigator.pushReplacement(
+                Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const ThirdRoute(),
                   ),
+                  (route) => false,
                 );
               },
             ),
