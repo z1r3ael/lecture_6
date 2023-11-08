@@ -6,7 +6,6 @@ class SecondScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final args = ModalRoute.of(context)!.settings.arguments as SecondScreenArguments;
 
     return Scaffold(
@@ -22,7 +21,11 @@ class SecondScreen extends StatelessWidget {
             const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/third');
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/third',
+                  ModalRoute.withName('/'),
+                );
               },
               child: const Text('Go to third'),
             ),
