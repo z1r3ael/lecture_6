@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:lecture_6/features/navigator/third_screen.dart';
 
 class SecondRoute extends StatelessWidget {
-  const SecondRoute({super.key});
+  final String data;
+
+  const SecondRoute({
+    super.key,
+    required this.data,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +20,16 @@ class SecondRoute extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(data),
+            const SizedBox(height: 40),
             ElevatedButton(
               child: const Text('Open route3'),
               onPressed: () {
-                Navigator.pushAndRemoveUntil(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const ThirdRoute(),
                   ),
-                  (route) => false,
                 );
               },
             ),

@@ -17,7 +17,7 @@ class FirstRoute extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const SecondRoute(),
+                builder: (context) => const SecondRoute(data: 'Some Data'),
               ),
             );
           },
