@@ -14,11 +14,21 @@ class FirstRoute extends StatelessWidget {
         child: ElevatedButton(
           child: const Text('Open route2'),
           onPressed: () {
-            Navigator.push(
+            Navigator.push<String?>(
               context,
               MaterialPageRoute(
                 builder: (context) => const SecondRoute(data: 'Some Data'),
               ),
+            ).then(
+              (value) {
+                if (value != null) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(value),
+                    ),
+                  );
+                }
+              },
             );
           },
         ),

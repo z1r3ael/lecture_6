@@ -39,6 +39,12 @@ class SecondRoute extends StatelessWidget {
               },
               child: const Text('Go back!'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context, data);
+              },
+              child: const Text('Go back with data'),
+            ),
           ],
         ),
       ),
