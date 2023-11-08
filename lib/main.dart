@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lecture_6/features/navigator/first_screen.dart';
+import 'package:lecture_6/features/navigator_named/first_screen.dart';
+import 'package:lecture_6/features/navigator_named/second_screen.dart';
+import 'package:lecture_6/features/navigator_named/third_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +13,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const FirstRoute(),
+      title: 'Named Routes Demo',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const FirstScreen(),
+        '/second': (context) => const SecondScreen(),
+        '/third': (context) => const ThirdScreen(),
+      },
     );
   }
 }
