@@ -18,7 +18,7 @@ class SecondRoute extends StatelessWidget {
             ElevatedButton(
               child: const Text('Open route3'),
               onPressed: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const ThirdRoute(),
